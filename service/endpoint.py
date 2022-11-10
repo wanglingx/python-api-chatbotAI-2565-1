@@ -1,7 +1,7 @@
 from __main__ import app
 from flask import Flask, jsonify, request
-
-import service.logic as logic
+import app as api
+from service.logic import Logic as lg
 import database.plugin as db
 
 class Endpoint:
@@ -18,8 +18,8 @@ class Endpoint:
         reply_token = req['originalDetectIntentRequest']['payload']['data']['replyToken']
         # id ของผู้ใช้
         id = req['originalDetectIntentRequest']['payload']['data']['source']['userId']
-        disname = app.line_bot_api.get_profile(
-            id).display_name  # ชื่อของผู้ใช้
+        disname = api.line_bot_api.get_profile(id).display_name  
+        # ชื่อของผู้ใช้
         # print(req)
         print('id = ' + id)
         print('name = ' + disname)
@@ -27,7 +27,7 @@ class Endpoint:
         print('intent = ' + intent)
         print('reply_token = ' + reply_token)
 
-        logic.reply(intent, text, reply_token, id, disname, req)
+        lg.reply(intent, text, reply_token, id, disname, req)
         return 'OK'
 
 
