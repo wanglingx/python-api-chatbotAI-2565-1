@@ -21,3 +21,10 @@ def insert_data(name, age, address):
     mydb.commit()
     mycursor.close()
     mydb.close()
+
+#def findsubjectbyjob()
+#require job find groupjob
+#groupjob find subject
+
+#def findsubjectbytiming()
+#require timing and finding groupjob

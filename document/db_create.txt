@@ -1,0 +1,20 @@
+CREATE TABLE Groupjob (
+	groupjob_id varchar(255) primary key,
+    groupjob_name varchar(255)
+)
+
+CREATE TABLE Job (
+	job_id varchar(255) primary key,
+    job_name varchar(255),
+    groupjob_name varchar(255)
+)
+
+CREATE TABLE Subject (
+	subject_id varchar(255) primary key,
+	subject_name varchar(255),
+	groupjob_id varchar(255),
+	timing varchar(255),
+    FOREIGN KEY(groupjob_id)
+	REFERENCES Groupjob(groupjob_id)
+)
+

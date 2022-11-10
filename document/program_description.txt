@@ -1,0 +1,20 @@
+# Tool installation
+pip install Flask
+pip install mysql-connector-python
+
+# Description Project Structure
+database --
+          |_ plugin.py (Connection to database and mysql query)
+service --
+          |_endpoint.py (router setup and request data from json)
+          |_logic.py (specialist fuction or rule based)
+    app.py (main system in this project)
+
+# Database connector
+using cloud database = amazon web service (คร่าว ๆ ขอดูก่อน)
+
+# Webserver connector
+using cloud webserver = Heroku
+
+# flow of data
+chatbot -> dialogflow -> json file -> Backend
