@@ -12,60 +12,59 @@ INSERT INTO Groupjob(groupjob_id,groupjob_name) VALUES('GJ010','it');
 INSERT INTO Groupjob(groupjob_id,groupjob_name) VALUES('GJ011','business');
 
 #insert job
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB001','Software Analyst','software');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB002','Software Engineer','software');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB003','Software Quality Analyst','software');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB004','Software Quality Assurance','software');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB005','System Analyst','software');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB006','System Analyst','security');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB001','Software Analyst','GJ003');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB002','Software Engineer','GJ003');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB003','Software Quality Analyst','GJ003');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB004','Software Quality Assurance','GJ003');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB005','System Analyst','GJ003');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB006','System Analyst','GJ007');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB007','Cyber security','security');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB008','Hacker','security');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB009','Cyber Risk Analyst','security');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB010','Security Penetration Tester','security');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB011','Platform Engineer','security');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB007','Cyber security','GJ007');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB008','Hacker','GJ007');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB009','Cyber Risk Analyst','GJ007');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB010','Security Penetration Tester','GJ007');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB011','Platform Engineer','GJ007');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB012','DevOps engineers','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB013','Full stack developer','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB014','Web developer','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB015','Mobile developer','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB016','Blockchain developer','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB017','Frontend developer','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB018','Backend developer','developer');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB019','Application Developer','developer');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB012','DevOps engineers','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB013','Full stack developer','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB014','Web developer','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB015','Mobile developer','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB016','Blockchain developer','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB017','Frontend developer','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB018','Backend developer','GJ002');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB019','Application Developer','GJ002');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB020','Data Analyst','data');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB021','Database Administrator','data');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB022','Data Engineer','data');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB023','Data Scientist','data');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB024','Bigdata analyst','data');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB025','Data warehouse','data');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB020','Data Analyst','GJ001');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB021','Database Administrator','GJ001');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB022','Data Engineer','GJ001');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB023','Data Scientist','GJ001');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB024','Bigdata analyst','GJ001');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB025','Data warehouse','GJ001');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB026','Ai Developer','Ai');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB027','Ai engineer','Ai');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB028','Machine learning engineer','Ai');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB029','Artificial Intellgence Scientist','Ai');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB026','Ai Developer','GJ006');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB027','Ai engineer','GJ006');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB028','Machine learning engineer','GJ006');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB029','Artificial Intellgence Scientist','GJ006');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB030','iot installation commissioners','iot');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB031','iot Engineer technical','iot');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB032','iot specialist','iot');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB033','Embedded Software Engineer','iot');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB030','iot installation commissioners','GJ008');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB031','iot Engineer technical','GJ008');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB032','iot specialist','GJ008');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB033','Embedded Software Engineer','GJ008');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB034','IT Auditor','it');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB035','IT consultant','it');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB036','System Administrator','it');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB034','IT Auditor','GJ010');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB035','IT consultant','GJ010');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB036','System Administrator','GJ010');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB037','Business Analyst','business');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB038','Enterprise Architecture','business');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB039','Platform Architect','business');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB040','Application architect','business');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB037','Business Analyst','GJ011');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB038','Enterprise Architecture','GJ011');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB039','Platform Architect','GJ011');
+INSERT INTO Job(job_id,job_name,groupjob_id  ) VALUES('JOB040','Application architect','GJ011');
 
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB041','Tester','Tester');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB042','UX/UI Designer','UI');
-INSERT INTO Job(job_id,job_name,groupjob_name ) VALUES('JOB043','Game developer','game');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB041','Tester','GJ005');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB042','UX/UI Designer','GJ004');
+INSERT INTO Job(job_id,job_name,groupjob_id ) VALUES('JOB043','Game developer','GJ009');
 
 #inser subject
-
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,time,ttimestamp)
 VALUES (1,'MACHINE LEARNING','GJ001',2565,1,'08:30-10:00',CURRENT_TIME());
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,time,ttimestamp)
