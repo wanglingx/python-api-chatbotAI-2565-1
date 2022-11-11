@@ -11,13 +11,16 @@ class Logic:
 
 
             text = 'วิชา = '+jobsubject+' เวลา = '+time + 'วัน = '+day
+
+        elif intent == 'classroom':
+            Logic.test1()
             # if intent == 'test2':
         # elif intent == 'time':
         text_message = app.TextSendMessage(text)
         app.line_bot_api.reply_message(reply_token, text_message) # ส่งข้อความตอบกลับไป
 
     def test1():
-        return 'ทดสอบสำเร็จ'
+        return 'ทดสอบสำเร็จ'     
 
     def setSubject(req) :
         jobsubject = req["queryResult"]["outputContexts"][0]["parameters"]["job"]
