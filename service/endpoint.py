@@ -33,8 +33,8 @@ class Endpoint:
     #Test get data
     @app.route('/getTime', methods=['GET'])
     def getsub1():
-        groupjob_id = 'GJ003'
-        period = 'morning'
+        groupjob_id = 'GJ001'
+        period = 'afternoon'
         day = 'พฤหัสบดี'
         # sent to database
         ans = db.getSubbyTimeNG(period,day)

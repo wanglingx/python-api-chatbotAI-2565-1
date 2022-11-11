@@ -12,7 +12,7 @@ def ConnectorMysql():
     print("Connection Success !")
     return mydb
     
-#def findsubjectbyjob()
+#def findsubjectbyjob() *
 def getSubbyJOb(job_name):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
@@ -26,7 +26,7 @@ def getSubbyJOb(job_name):
     ans =  json.loads(js_str)  
     return ans
     
-#def findsubjectbytiming()
+#def findsubjectbytiming() *
 def getSubbyTime(groupjob_id,time,day):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
@@ -34,15 +34,30 @@ def getSubbyTime(groupjob_id,time,day):
     val = (groupjob_id,time,day)
     mycursor.execute(sql,val)
     result = mycursor.fetchall()
+    arr = {}
     if len(result) > 0:
-        for x in result:
-            arr = {
-                "subject_name": x[0],
-                "time":x[1],
-            }
+        for x in range(len(result)):
+            print(str(x))
+            arr["subject" +
+                str(x)] = {"subject_name": result[x][0], "time": result[x][1]}
     return arr
 
-#use for get subjectby time only
+#get data by groupjob only
+def getSubbyGroupjob(groupjob_id):
+    mydb = ConnectorMysql()
+    mycursor = mydb.cursor()
+    sql = "SELECT subject_name ,time FROM Subject WHERE groupjob_id = %s"
+    val = (groupjob_id)
+    mycursor.execute(sql, val)
+    result = mycursor.fetchall()
+    arr = {}
+    if len(result) > 0:
+        for x in range(len(result)):
+            arr["subject" +
+                str(x)] = {"subject_name": result[x][0], "time": result[x][1]}
+    return arr
+
+#use for get subjectby time only *
 def getSubbyTimeNG(time, day):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
@@ -50,10 +65,10 @@ def getSubbyTimeNG(time, day):
     val = (time, day)
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
-    # if len(result) > 0:
-    #     for x in result:
-    #         arr = {
-    #             "subject_name": x[0],
-    #             "time": x[1],
-    #         }
-    return result
+    arr = {}
+    if len(result) > 0:
+        for x in range(len(result)):
+            arr["subject"+ str(x)] = {"subject_name": result[x][0],"time": result[x][1]}
+    return arr        
+
+

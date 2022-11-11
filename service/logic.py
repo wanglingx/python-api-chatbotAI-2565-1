@@ -55,23 +55,36 @@ class Logic:
         return day
     
     
-    #เข้า database by job
+    #เข้า database by job *
     def getdata_SubjectbyJob(job_name):
         ans = db.getSubbyTime(job_name)
         print(ans)
         return ans
     
-    #เข้า database by time
+    #เข้า database by time *
     def getdata_SubjectbyTime(groupjob_id,period,day): 
         ans = db.getSubbyTime(groupjob_id,period,day)
         return jsonify({'message': ans})
     
-    #เข้า database by time not groupjob_id
+    #เข้า database by group_job
+    def getdata_SubjectbyTime(groupjob_id):
+        ans = db.getSubbyTime(groupjob_id)
+        return jsonify({'message': ans})
+    
+    #เข้า database by time only*
     def getdata_SubjectbyTime(period, day):
         ans = db.getSubbyTime(period, day)
         return jsonify({'message': ans})
        
-
+    # def answerbyTimeOnly(period,day):
+    #     result = Logic.getdata_SubjectbyTime(period, day)
+    #     if(result > 0):
+    #         for x in result:
+    #             js_str = json.dumps(result)
+    #             ans = json.loads(js_str)
+    #             answer = 'วัน : '+day +' เวลา : '+ans['time']+' วิชา :'+ans['subject_name']
+        
+    
 #validate job -> groupjob -> time and day
 #                         -> All
 

@@ -123,7 +123,7 @@ VALUES (24,'SOFTWARE ARCHITECTURAL DESIGN','GJ011',2565,1,'พฤหัสบด
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
 VALUES (25,'SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (26,' ELECTRONIC BUSINESS','GJ011',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+VALUES (26,'ELECTRONIC BUSINESS','GJ011',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
 
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
 VALUES (27,'MACHINE LEARNING','GJ001',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
@@ -176,4 +176,4 @@ VALUES (50,'SOFTWARE ARCHITECTURAL DESIGN','GJ011',2565,1,'ศุกร์','13:
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
 VALUES (51,'SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
 INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (52,' ELECTRONIC BUSINESS','GJ011',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+VALUES (52,'ELECTRONIC BUSINESS','GJ011',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
