@@ -10,10 +10,13 @@ CREATE TABLE Job (
 )
 
 CREATE TABLE Subject (
-	subject_id varchar(255) primary key,
+	subject_id int auto_increment primary key,
 	subject_name varchar(255),
 	groupjob_id varchar(255),
-	timing varchar(255),
+	year int,
+	sem int,
+	time varchar(255),
+	ttimestamp DATE,
     FOREIGN KEY(groupjob_id)
 	REFERENCES Groupjob(groupjob_id)
 )
