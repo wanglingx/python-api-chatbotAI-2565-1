@@ -39,3 +39,10 @@ class Endpoint:
         # sent to database
         db.insert_data(name, age, address)
         return jsonify({'message': "success"})
+
+    @app.route('/getjob', methods=['GET'])
+    def getsub1():
+        job_name = 'Cyber security'
+        # sent to database
+        ans = db.getSubbyJOb(job_name)
+        return jsonify({'message': ans })

@@ -1,3 +1,4 @@
+import json
 import mysql.connector
 
 def ConnectorMysql():
@@ -15,18 +16,19 @@ def ConnectorMysql():
 def getSubbyJOb(job_name):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT groupjob_id FROM Job WHERE job_id = %s"
-    val = job_name
-    mycursor.execute(sql,val)
+    sql = "SELECT groupjob_id FROM Job WHERE job_name = '{}';".format(job_name)
+    mycursor.execute(sql)
     result = mycursor.fetchall()
-    for x in result:
-        sql2 = "SELECT subject_name FROM Subject,Groupjob WHERE Groupjob.groupjob_id = %s AND Subject.groupjob_id = %s"
-        val2 = (x,x)
-        mycursor.execute(sql2,val2)
-        newSub = mycursor.fetchall()
-    mydb.commit()
-    mycursor.close()
-    mydb.close()    
+    if len(result) > 0:
+        for x in result:
+            arr = {"groupjob_id": x[0]}
+    
+    js_str = json.dumps(arr)
+    ans =  json.loads(js_str)  
+    sql2 = "SELECT subject_name FROM Subject,Groupjob WHERE Groupjob.groupjob_id = %s AND Subject.groupjob_id = %s"
+    val = (ans['groupjob_id'], ans['groupjob_id'])
+    mycursor.execute(sql2,val)
+    newSub = mycursor.fetchall()
     return newSub
     
 #def findsubjectbytiming()
