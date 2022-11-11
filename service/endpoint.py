@@ -31,15 +31,6 @@ class Endpoint:
         return 'OK'
 
 
-    @app.route('/insert', methods=['POST'])
-    def insert_id():
-        name = request.args.get('name')
-        age = request.args.get('age')
-        address = request.args.get("address")
-        # sent to database
-        db.insert_data(name, age, address)
-        return jsonify({'message': "success"})
-
     @app.route('/getjob', methods=['GET'])
     def getsub1():
         job_name = 'Cyber security'

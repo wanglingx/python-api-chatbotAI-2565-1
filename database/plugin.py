@@ -35,11 +35,13 @@ def getSubbyJOb(job_name):
 def getSubbyTime(time):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_name FROM Subject WHERE time = %s"
-    val = time
-    mycursor.execute(sql, val)
+    sql = "SELECT subject_name time FROM Subject WHERE time = '{}';".format(time)
+    mycursor.execute(sql)
     result = mycursor.fetchall()
-    mydb.commit()
-    mycursor.close()
-    mydb.close()
-    return result
+    if len(result) > 0:
+        for x in result:
+            arr = {
+                "subject_name": x[0],
+                "time":x[1] 
+            }
+    return arr
