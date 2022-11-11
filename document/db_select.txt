@@ -2,32 +2,48 @@ SELECT groupjob_id FROM Job WHERE job_name = 'Cyber security';
 SELECT * FROM Subject,Groupjob WHERE Groupjob.groupjob_id = 'GJ007' AND Subject.groupjob_id = 'GJ007';
 SELECT * FROM Subject WHERE time = '08:30-10:00';
 
+#def findsubjectbyjob()
 def getSubbyJOb(job_name):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT groupjob_id FROM Job WHERE job_id = %s"
-    val = job_name
-    mycursor.execute(sql,val)
+    sql = "SELECT groupjob_id FROM Job WHERE job_name = '{}';".format(job_name)
+    mycursor.execute(sql)
     result = mycursor.fetchall()
-    for x in result:
-        sql2 = "SELECT subject_name FROM Subject,Groupjob WHERE Groupjob.groupjob_id = %s AND Subject.groupjob_id = %s"
-        val2 = (x,x)
-        mycursor.execute(sql2,val2)
-        newSub = mycursor.fetchall()
-    mydb.commit()
-    mycursor.close()
-    mydb.close()    
-    return newSub
+    if len(result) > 0:
+        for x in result:
+            arr = {"groupjob_id": x[0]}
+    js_str = json.dumps(arr)
+    ans =  json.loads(js_str)  
+    return ans
     
 #def findsubjectbytiming()
-def getSubbyTime(time):
+def getSubbyTime(groupjob_id,time,day):
     mydb = ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_name FROM Subject WHERE time = %s"
-    val = time
+    sql = "SELECT subject_name ,time FROM Subject WHERE groupjob_id = %s AND period = %s AND day = %s"
+    val = (groupjob_id,time,day)
+    mycursor.execute(sql,val)
+    result = mycursor.fetchall()
+    if len(result) > 0:
+        for x in result:
+            arr = {
+                "subject_name": x[0],
+                "time":x[1],
+            }
+    return arr
+
+#use for get subjectby time only
+def getSubbyTimeNG(time, day):
+    mydb = ConnectorMysql()
+    mycursor = mydb.cursor()
+    sql = "SELECT subject_name ,time FROM Subject WHERE period = %s AND day = %s"
+    val = (time, day)
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
-    mydb.commit()
-    mycursor.close()
-    mydb.close()
+    # if len(result) > 0:
+    #     for x in result:
+    #         arr = {
+    #             "subject_name": x[0],
+    #             "time": x[1],
+    #         }
     return result

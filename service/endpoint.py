@@ -2,7 +2,7 @@ from __main__ import app
 from flask import Flask, jsonify, request
 import app as api
 from service.logic import Logic as lg
-import database.plugin as db
+import service.plugin as db
 
 class Endpoint:
     @app.route("/callback", methods=['POST'])
@@ -30,10 +30,12 @@ class Endpoint:
         lg.reply(intent, text, reply_token, id, disname, req)
         return 'OK'
 
-
-    @app.route('/getjob', methods=['GET'])
+    #Test get data
+    @app.route('/getTime', methods=['GET'])
     def getsub1():
-        job_name = 'Cyber security'
+        groupjob_id = 'GJ003'
+        period = 'morning'
+        day = 'พฤหัสบดี'
         # sent to database
-        ans = db.getSubbyJOb(job_name)
+        ans = db.getSubbyTimeNG(period,day)
         return jsonify({'message': ans })
