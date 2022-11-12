@@ -1,7 +1,5 @@
 import app
 import service.plugin as db
-from flask import jsonify
-import json
 
 class Logic:
     def reply(intent, text, reply_token, id, disname, req):  # function reply
@@ -174,6 +172,9 @@ class Logic:
 
         replyMgs = "สำหรับวิชาเลือกที่เปิดในเทอมนี้ช่วง"+period+"ของวัน" + \
             day+"มีดังนี้"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
+            
+        if len(result) <= 0:
+            replyMgs = Logic.answerAllSub()
         return replyMgs
     
     #scene 2.2 all of semester not job not period not day
@@ -191,8 +192,8 @@ class Logic:
                             ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
                             +ans[str(key)]["subject_name"]+"\n"
 
-        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ทั้งหมดมีดังนี้" + \
-                "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
+        replyMgs = "ไม่มีวิชาเลือกในวันที่คุณเลือกในเทอมนี้"+"\n"+"โดยในเทอมนี้มีเปิดสอนทั้งหมดมีดังนี้" + \
+                "\n"+"ซึ่งวันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
 
     

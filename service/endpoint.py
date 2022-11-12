@@ -1,9 +1,8 @@
 from __main__ import app
-from flask import jsonify, request
+from flask import request
 import app as api
 from service.logic import Logic as lg
 import service.plugin as db
-import json
 
 class Endpoint:
     @app.route("/callback", methods=['POST'])
@@ -60,5 +59,5 @@ class Endpoint:
 
     @app.route('/getTime2', methods=['GET'])
     def getsub2():
-        return lg.answerbyTimeOnly(period='afternoon', day='พฤหัสบดี')
+        return lg.answerbyTimeOnly(period='afternoon', day='จันทร์')
     
