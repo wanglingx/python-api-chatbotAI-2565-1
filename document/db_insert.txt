@@ -72,108 +72,108 @@ INSERT INTO Day (id,day_name,sum_sub) VALUES (4,'พฤหัสบดี',15);
 INSERT INTO Day (id,day_name,sum_sub) VALUES (5,'ศุกร์',15);
 
 #inser subject
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (1,'MACHINE LEARNING','GJ001',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (2,'PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ001',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (3,'SPATIAL DATABASES AND GIS APPLICATIONS','GJ001',2565,1,'พฤหัสบดี','18:30-20:00','evening',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (4,'BIG DATA ANALYSIS','GJ001',2565,1,'พฤหัสบดี','17:00-18:30','evening',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (5,'COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ002',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject(subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (6,'SYSTEM SECURITY','GJ002',2565,1,'พฤหัสบดี','10:30-12:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (7,'PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ002',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (8,'INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ002',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (9,'FINANCIAL THEORY','GJ003',2565,1,'พฤหัสบดี','10:00-12:30','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (10,'INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ003',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (11,'SOFTWARE ARCHITECTURAL DESIGN','GJ003',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (12,'SOFTWARE VERIFICATION AND VALIDATION','GJ003',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (13,'SOFTWARE REQUIREMENT SPECIFICATION AND MANAGEMENT','GJ003',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (14,'PRINCIPLE OF INTERNET OF THINGS IMPLEMENTATION','GJ008',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (15,'MIXED REALITY','GJ009',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (16,'DIGITAL IMAGE PROCESSING','GJ009',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (17,'COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ007',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (18,'SYSTEM SECURITY','GJ007',2565,1,'พฤหัสบดี','10:30-12:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (19,'MACHINE LEARNING','GJ006',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (20,'SOFTWARE VERIFICATION AND VALIDATION','GJ005',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (21,'DESIGNING INTERACTIVE SYSTEMS','GJ004',2565,1,'พฤหัสบดี','10:30-12:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (22,'FINANCIAL THEORY','GJ011',2565,1,'พฤหัสบดี','10:00-12:30','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (23,'INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ011',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (24,'SOFTWARE ARCHITECTURAL DESIGN','GJ011',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (25,'SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (26,'ELECTRONIC BUSINESS','GJ011',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (1,'05506045','MACHINE LEARNING','GJ001',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (2,'05506229','PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ001',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (3,'05506219','SPATIAL DATABASES AND GIS APPLICATIONS','GJ001',2565,1,'พฤหัสบดี','18:30-20:00','evening',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (4,'05506218','BIG DATA ANALYSIS','GJ001',2565,1,'พฤหัสบดี','17:00-18:30','evening',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (5,'05506060','COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ002',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject(id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (6,'05506044','SYSTEM SECURITY','GJ002',2565,1,'พฤหัสบดี','10:30-12:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (7,'05506229','PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ002',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (8,'05506154','INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ002',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (9,'05506160 ','FINANCIAL THEORY','GJ003',2565,1,'พฤหัสบดี','10:00-12:30','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (10,'05506154','INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ003',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (11,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ003',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (12,'05506057','SOFTWARE VERIFICATION AND VALIDATION','GJ003',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (13,'05506059','SOFTWARE REQUIREMENT SPECIFICATION AND MANAGEMENT','GJ003',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (14,'05506199','PRINCIPLE OF INTERNET OF THINGS IMPLEMENTATION','GJ008',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (15,'05506221 ','MIXED REALITY','GJ009',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (16,'05506026','DIGITAL IMAGE PROCESSING','GJ009',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (17,'05506060','COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ007',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (18,'05506044','SYSTEM SECURITY','GJ007',2565,1,'พฤหัสบดี','10:30-12:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (19,'05506045','MACHINE LEARNING','GJ006',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (20,'05506057','SOFTWARE VERIFICATION AND VALIDATION','GJ005',2565,1,'พฤหัสบดี','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (21,'05506163','DESIGNING INTERACTIVE SYSTEMS','GJ004',2565,1,'พฤหัสบดี','10:30-12:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (22,'05506160 ','FINANCIAL THEORY','GJ011',2565,1,'พฤหัสบดี','10:00-12:30','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (23,'05506154','INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ011',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (24,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ011',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (25,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'พฤหัสบดี','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (52,'05506024','ELECTRONIC BUSINESS','GJ011',2565,1,'พฤหัสบดี','08:30-10:00','morning',CURRENT_TIME());
 
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (27,'MACHINE LEARNING','GJ001',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (28,'PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ001',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (29,'SPATIAL DATABASES AND GIS APPLICATIONS','GJ001',2565,1,'ศุกร์','18:30-20:00','evening',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (30,'BIG DATA ANALYSIS','GJ001',2565,1,'ศุกร์','17:00-18:30','evening',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (31,'COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ002',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (32,'SYSTEM SECURITY','GJ002',2565,1,'ศุกร์','10:30-12:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (33,'PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ002',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (34,'INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ002',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (35,'FINANCIAL THEORY','GJ003',2565,1,'ศุกร์','10:00-12:30','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (36,'INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ003',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (37,'SOFTWARE ARCHITECTURAL DESIGN','GJ003',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (38,'SOFTWARE VERIFICATION AND VALIDATION','GJ003',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (39,'SOFTWARE REQUIREMENT SPECIFICATION AND MANAGEMENT','GJ003',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (40,'PRINCIPLE OF INTERNET OF THINGS IMPLEMENTATION','GJ008',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (41,'MIXED REALITY','GJ009',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (42,'DIGITAL IMAGE PROCESSING','GJ009',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (43,'COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ007',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (44,'SYSTEM SECURITY','GJ007',2565,1,'ศุกร์','10:30-12:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (45,'MACHINE LEARNING','GJ006',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (46,'SOFTWARE VERIFICATION AND VALIDATION','GJ005',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (47,'DESIGNING INTERACTIVE SYSTEMS','GJ004',2565,1,'ศุกร์','10:30-12:00','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (48,'FINANCIAL THEORY','GJ011',2565,1,'ศุกร์','10:00-12:30','morning',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (49,'INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ011',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (50,'SOFTWARE ARCHITECTURAL DESIGN','GJ011',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (51,'SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
-INSERT INTO Subject (subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
-VALUES (52,'ELECTRONIC BUSINESS','GJ011',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (26,'05506045','MACHINE LEARNING','GJ001',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (27,'05506229','PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ001',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (28,'05506219','SPATIAL DATABASES AND GIS APPLICATIONS','GJ001',2565,1,'ศุกร์','18:30-20:00','evening',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (29,'05506218','BIG DATA ANALYSIS','GJ001',2565,1,'ศุกร์','17:00-18:30','evening',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (30,'05506060','COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ002',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (31,'05506044','SYSTEM SECURITY','GJ002',2565,1,'ศุกร์','10:30-12:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (32,'05506229','PROGRAMMING PREDICTIVE MODELS USING PYTHON','GJ002',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (33,'05506154','INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ002',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (34,'05506160 ','FINANCIAL THEORY','GJ003',2565,1,'ศุกร์','10:00-12:30','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (35,'05506154','INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ003',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (36,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ003',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (37,'05506057','SOFTWARE VERIFICATION AND VALIDATION','GJ003',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (38,'05506059','SOFTWARE REQUIREMENT SPECIFICATION AND MANAGEMENT','GJ003',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (39,'05506199','PRINCIPLE OF INTERNET OF THINGS IMPLEMENTATION','GJ008',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (40,'05506221 ','MIXED REALITY','GJ009',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (41,'05506026','DIGITAL IMAGE PROCESSING','GJ009',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (42,'05506060','COMPONENT-BASED SOFTWARE DEVELOPMENT','GJ007',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (43,'05506044','SYSTEM SECURITY','GJ007',2565,1,'ศุกร์','10:30-12:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (44,'05506045','MACHINE LEARNING','GJ006',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (45,'05506057','SOFTWARE VERIFICATION AND VALIDATION','GJ005',2565,1,'ศุกร์','15:00-16:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (46,'05506163','DESIGNING INTERACTIVE SYSTEMS','GJ004',2565,1,'ศุกร์','10:30-12:00','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (47,'05506160 ','FINANCIAL THEORY','GJ011',2565,1,'ศุกร์','10:00-12:30','morning',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (48,'05506154','INTRODUCTION TO SUPPLY CHAIN OPTIMIZATION','GJ011',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (49,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ011',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (50,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
+INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
+VALUES (51,'05506024','ELECTRONIC BUSINESS','GJ011',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());

@@ -5,19 +5,16 @@ import json
 
 class Logic:
     def reply(intent, text, reply_token, id, disname, req):  # function reply
-        if intent == 'testdodo':  # จับว่าเป็น intent ไหน
-            text = Logic.test1()
-            
-        elif intent == 'finalsubject':
+        # if intent == 'job':  # จับว่าเป็น intent ไหน
+        #     text = Logic.test1()
+        #
+        if intent == 'final-subject':
             jobsubject=Logic.setSubject(req)
             time = Logic.setTime(req)
             day=Logic.setDay(req)
-            result = Logic.getdata_SubjectbyTime(time,day)
-            if(result > 0):
-                js_str = json.dumps(result)
-                ans = json.loads(js_str)
-
-            text = 'วิชา = '+ans['subject_name'] + ' เวลา = '+ans['time'] + 'วัน = '+day
+            #result = Logic.getdata_SubjectbyTime(time,day)
+           
+            text = 'วิชา = '+jobsubject + ' เวลา = '+time + 'วัน = '+day
             #text = 'วิชา = '+jobsubject+' เวลา = '+time+ 'วัน = '+day
 
         elif intent == 'classroom':
@@ -94,6 +91,7 @@ class Logic:
                 subject += "วัน : " + \
                     ans["subject"+str(x)]["day"] + " เวลา : " + \
                     ans["subject"+str(x)]["time"]+" วิชา : " + \
+                    ans["subject"+str(x)]["subject_id"]+" " + \
                     ans["subject"+str(x)]["subject_name"]+"\n"
         replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" มีดังนี้"+"\n"+subject+"เลือกลงได้เลยนะครับผมม" 
         return replyMgs
@@ -111,6 +109,7 @@ class Logic:
                     ans[key] = val
                     subject += "เวลา : " + \
                         ans[str(key)]["time"] + " วิชา : " + \
+                        ans[str(key)]["subject_id"]+" " + \
                         ans[str(key)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -134,6 +133,7 @@ class Logic:
             for x in range(len(ans)):
                 subject += "เวลา : " + \
                     ans["subject"+str(x)]["time"] + " วิชา : " + \
+                    ans["subject"+str(x)]["subject_id"]+" "+ \
                     ans["subject"+str(x)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -163,6 +163,7 @@ class Logic:
                     ans[key] = val
                     subject += "เวลา : " + \
                         ans[str(key)]["time"] + " วิชา : " + \
+                        ans[str(key)]["subject_id"]+" "+ \
                         ans[str(key)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -182,18 +183,18 @@ class Logic:
         temp = []
         ans = dict()
         if len(result) > 0:
-            for key, val in result.items():
-                if val not in temp:
-                    temp.append(val)
-                    ans[key] = val
-                    subject += "เวลา : " + \
-                        ans[str(key)]["time"] + " วิชา : " + \
-                        ans[str(key)]["subject_name"]+"\n"
+                for key, val in result.items():
+                    if val not in temp:
+                        temp.append(val)
+                        ans[key] = val
+                        subject += "เวลา : " + \
+                            ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
+                            +ans[str(key)]["subject_name"]+"\n"
 
         replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ทั้งหมดมีดังนี้" + \
-            "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน" + \
-            "\n"+subject+"เลือกลงได้เลยนะครับผมม"
+                "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
+
     
 #validate job -> groupjob -> time and day
 #                         -> All
