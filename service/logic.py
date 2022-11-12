@@ -1,9 +1,10 @@
 import app
 import service.plugin as db
+from flask import jsonify
+import json
 
 class Logic:
     def reply(intent, text, reply_token, id, disname, req):  # function reply
-<<<<<<< HEAD
         if intent == 'testdodo':  # จับว่าเป็น intent ไหน
             text = Logic.test1()
             
@@ -21,19 +22,6 @@ class Logic:
 
             print("job ="+job+'\ntime = '+time+'\nday = '+day+'\ngroup = '+groupjob_id)
             # Logic.answerbyJobnPeriodnDay(job,groupjob_id,time,day)
-=======
-        # if intent == 'job':  # จับว่าเป็น intent ไหน
-        #     text = Logic.test1()
-        #
-        if intent == 'final-subject':
-            jobsubject=Logic.setSubject(req)
-            time = Logic.setTime(req)
-            day=Logic.setDay(req)
-            #result = Logic.getdata_SubjectbyTime(time,day)
-           
-            text = 'วิชา = '+jobsubject + ' เวลา = '+time + 'วัน = '+day
-            #text = 'วิชา = '+jobsubject+' เวลา = '+time+ 'วัน = '+day
->>>>>>> 480b72e32e452e5611cea53b4b7bd550ad67f28c
 
             # result = Logic.getdata_SubjectbyTime(time,day)
             # if(result > 0):
@@ -46,7 +34,7 @@ class Logic:
         elif intent == 'select-from-time-choose-day - yes':  # 2.ช่วงเวลา วัน
             time = Logic.setTime(req)
             day = Logic.setDay(req)
-            print('time = '+time+'\nday = '+day)
+            print('time = '+time+'\nday = '+day+'\ngroup = '+groupjob_id)
             # Logic.answerbyTimeOnly(time,day)
             # print('time = '+str(time)+'\nday = '+str(day))
 
@@ -125,7 +113,6 @@ class Logic:
                 subject += "วัน : " + \
                     ans["subject"+str(x)]["day"] + " เวลา : " + \
                     ans["subject"+str(x)]["time"]+" วิชา : " + \
-                    ans["subject"+str(x)]["subject_id"]+" " + \
                     ans["subject"+str(x)]["subject_name"]+"\n"
                 print(subject)
         replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" มีดังนี้"+"\n"+subject+"\nเลือกลงได้เลยนะครับผมม" 
@@ -144,7 +131,6 @@ class Logic:
                     ans[key] = val
                     subject += "เวลา : " + \
                         ans[str(key)]["time"] + " วิชา : " + \
-                        ans[str(key)]["subject_id"]+" " + \
                         ans[str(key)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -168,7 +154,6 @@ class Logic:
             for x in range(len(ans)):
                 subject += "เวลา : " + \
                     ans["subject"+str(x)]["time"] + " วิชา : " + \
-                    ans["subject"+str(x)]["subject_id"]+" "+ \
                     ans["subject"+str(x)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -232,7 +217,6 @@ class Logic:
         replyMgs = "ไม่มีวิชาเลือกในวันที่คุณเลือกในเทอมนี้"+"\n"+"โดยในเทอมนี้มีเปิดสอนทั้งหมดมีดังนี้" + \
                 "\n"+"ซึ่งวันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
-
     
 #validate job -> groupjob -> time and day
 #                         -> All
