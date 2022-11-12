@@ -19,6 +19,7 @@ def getSubbyJOb(job_name):
     sql = "SELECT groupjob_id FROM Job WHERE job_name = '{}';".format(job_name)
     mycursor.execute(sql)
     result = mycursor.fetchall()
+    arr=''
     if len(result) > 0:
         for x in result:
             arr = {"groupjob_id": x[0]}

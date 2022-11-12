@@ -8,20 +8,39 @@ class Logic:
         if intent == 'testdodo':  # จับว่าเป็น intent ไหน
             text = Logic.test1()
             
-        elif intent == 'finalsubject':
-            jobsubject=Logic.setSubject(req)
+        elif intent == 'show-all-job': #1.1 แสดงอาชีพทั้งหมดในสายนั้น
+            job=Logic.setjob(req)
+            print('Job = '+job)
+            groupjob_id = Logic.getgroups_ID(job)
+            text=Logic.answerbyJobOnly(job, groupjob_id)
+
+        elif intent == 'choose-day-after - yes': #1.2 ใส่เวลา วัน อาชีพ
+            job=Logic.setjob(req)
             time = Logic.setTime(req)
             day=Logic.setDay(req)
-            result = Logic.getdata_SubjectbyTime(time,day)
-            if(result > 0):
-                js_str = json.dumps(result)
-                ans = json.loads(js_str)
+            groupjob_id=Logic.getgroups_ID(job)
 
-            text = 'วิชา = '+ans['subject_name'] + ' เวลา = '+ans['time'] + 'วัน = '+day
-            #text = 'วิชา = '+jobsubject+' เวลา = '+time+ 'วัน = '+day
+            print("job ="+job+'\ntime = '+time+'\nday = '+day+'\ngroup = '+groupjob_id)
+            # Logic.answerbyJobnPeriodnDay(job,groupjob_id,time,day)
 
-        elif intent == 'classroom':
-            Logic.test1()
+            # result = Logic.getdata_SubjectbyTime(time,day)
+            # if(result > 0):
+            #     js_str = json.dumps(result)
+            #     ans = json.loads(js_str)
+
+            # text = 'วิชา = '+ans['subject_name'] + ' เวลา = '+ans['time'] + 'วัน = '+day
+            #text = 'วิชา = '+jobsubject+' เวลา = '+time+ 'วัน = '+day-
+
+        elif intent == 'select-from-time-choose-day - yes':  # 2.ช่วงเวลา วัน
+            time = Logic.setTime(req)
+            day = Logic.setDay(req)
+            print('time = '+time+'\nday = '+day)
+            # Logic.answerbyTimeOnly(time,day)
+            # print('time = '+str(time)+'\nday = '+str(day))
+
+
+    
+            
            
         text_message = app.TextSendMessage(text)
         app.line_bot_api.reply_message(reply_token, text_message) # ส่งข้อความตอบกลับไป
@@ -29,13 +48,13 @@ class Logic:
     def test1():
         return 'ทดสอบสำเร็จ'     
 
-    def setSubject(req) :
-        jobsubject = req["queryResult"]["outputContexts"][0]["parameters"]["job"]
-        jobsubject = jobsubject.upper()
-        return jobsubject
+    def setjob(req) :
+        job = req["queryResult"]["outputContexts"][1]["parameters"]["job"]
+        # jobsubject = jobsubject.upper()
+        return job
     
     def setTime(req) : 
-        time=req["queryResult"]["outputContexts"][0]["parameters"]["time.original"]
+        time=req["queryResult"]["outputContexts"][0]["parameters"]["time"]
         if time == 'เช้า' or time == 'ช่วงเช้า':
             time = 'morning'
         elif time == 'บ่าย'or time == 'ช่วงบ่าย':
@@ -45,20 +64,20 @@ class Logic:
         return time
     
     def setDay(req) : 
-        day = req["queryResult"]["outputContexts"][0]["parameters"]["day.original"]
-        if day == 'พฤหัส' or day == 'พฤหัสบดี' or day == 'วันพฤหัส' or day == 'วันพฤหัสบดี' or day == 'thursday' or day == 'Thursday':
-            day = 'พฤหัสบดี'
-        elif day == 'ศุกร์' or day == 'ศุก' or day == 'วันศุกร์' or day == 'วันศุก' or day == 'friday' or day == 'Friday':
-            day = 'ศุกร์'  
-        else :
-            return 'เสียใจด้วยน้า เทอมนี้ยังไม่มี แต่ยังมีวิชาอื่นนะ ว่าแต่เทอมนี้มีวิชาไรบ้างน้า'  
+        day = req["queryResult"]["outputContexts"][0]["parameters"]["day"]
+        # if day == 'พฤหัส' or day == 'พฤหัสบดี' or day == 'วันพฤหัส' or day == 'วันพฤหัสบดี' or day == 'thursday' or day == 'Thursday':
+        #     day = 'พฤหัสบดี'
+        # elif day == 'ศุกร์' or day == 'ศุก' or day == 'วันศุกร์' or day == 'วันศุก' or day == 'friday' or day == 'Friday':
+        #     day = 'ศุกร์'  
+        # else :
+        #     return 'เสียใจด้วยน้า เทอมนี้ยังไม่มี แต่ยังมีวิชาอื่นนะ ว่าแต่เทอมนี้มีวิชาไรบ้างน้า'  
         return day
     
     
     #เข้า database by job 
-    def getdata_SubjectbyJob(job_name):
-        ans = db.getSubbyTime(job_name)  
-        return ans
+    def getgroups_ID(job_name):
+        groupjob_id = db.getSubbyJOb(job_name)  
+        return groupjob_id
     
     #เข้า database by group_job
     def getdata_SubjectbyGroupjob(groupjob_id):
@@ -95,7 +114,8 @@ class Logic:
                     ans["subject"+str(x)]["day"] + " เวลา : " + \
                     ans["subject"+str(x)]["time"]+" วิชา : " + \
                     ans["subject"+str(x)]["subject_name"]+"\n"
-        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" มีดังนี้"+"\n"+subject+"เลือกลงได้เลยนะครับผมม" 
+                print(subject)
+        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" มีดังนี้"+"\n"+subject+"\nเลือกลงได้เลยนะครับผมม" 
         return replyMgs
     
     #scence 1.2 by job and period (group_job,period)
@@ -163,6 +183,7 @@ class Logic:
                     ans[key] = val
                     subject += "เวลา : " + \
                         ans[str(key)]["time"] + " วิชา : " + \
+                        ans[str(key)]["subject_id"]+" "+ \
                         ans[str(key)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -173,6 +194,9 @@ class Logic:
 
         replyMgs = "สำหรับวิชาเลือกที่เปิดในเทอมนี้ช่วง"+period+"ของวัน" + \
             day+"มีดังนี้"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
+            
+        if len(result) <= 0:
+            replyMgs = Logic.answerAllSub()
         return replyMgs
     
     #scene 2.2 all of semester not job not period not day
@@ -182,17 +206,16 @@ class Logic:
         temp = []
         ans = dict()
         if len(result) > 0:
-            for key, val in result.items():
-                if val not in temp:
-                    temp.append(val)
-                    ans[key] = val
-                    subject += "เวลา : " + \
-                        ans[str(key)]["time"] + " วิชา : " + \
-                        ans[str(key)]["subject_name"]+"\n"
+                for key, val in result.items():
+                    if val not in temp:
+                        temp.append(val)
+                        ans[key] = val
+                        subject += "เวลา : " + \
+                            ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
+                            +ans[str(key)]["subject_name"]+"\n"
 
-        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ทั้งหมดมีดังนี้" + \
-            "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน" + \
-            "\n"+subject+"เลือกลงได้เลยนะครับผมม"
+        replyMgs = "ไม่มีวิชาเลือกในวันที่คุณเลือกในเทอมนี้"+"\n"+"โดยในเทอมนี้มีเปิดสอนทั้งหมดมีดังนี้" + \
+                "\n"+"ซึ่งวันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
     
 #validate job -> groupjob -> time and day
