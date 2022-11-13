@@ -177,3 +177,125 @@ INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,pe
 VALUES (50,'05506051','SOFTWARE ARCHITECTURAL DESIGN','GJ010',2565,1,'ศุกร์','13:00-14:30','afternoon',CURRENT_TIME());
 INSERT INTO Subject (id,subject_id,subject_name,groupjob_id,year,sem,day,time,period,ttimestamp)
 VALUES (51,'05506024','ELECTRONIC BUSINESS','GJ011',2565,1,'ศุกร์','08:30-10:00','morning',CURRENT_TIME());
+
+#classroom
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC01' , 'Artificial Intelligence' , '1' ,'ตึกจุฬาภรณ์ 1 ห้อง 601/2','10.30-12.00','จันทร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC02' , 'Artificial Intelligence' , '2' ,'ตึกจุฬาภรณ์ 1 ห้อง 601/2','8.30-10.00','จันทร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC03' , 'Software Engineer' , '1' ,'ตึกจุฬาภรณ์ 1 ห้อง 601/1','8.30-10.00','จันทร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC04' , 'Software Engineer' , '2' ,'ตึกจุฬาภรณ์ 1 ห้อง 601/1','10.30-12.00','จันทร์' );
+
+#วันอังคาร
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC05' , 'Information Management' , '1' ,'ตึกจุฬาภรณ์ 2 ห้อง 211','10.30-12.00','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC06' , 'Information Management' , '2' ,'ตึกจุฬาภรณ์ 2 ห้อง 211','8.30-10.00','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC07' , 'Software Engineer' , '1' ,'ตึกจุฬาภรณ์ 1 ห้อง 601/2','8.30-10.00','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC08' , 'Software Engineer' , '2' ,'ตึกจุฬาภรณ์ 1 ห้อง 601/2','10.30-12.00','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC09' , 'Automata Theory And Programming Language' , '1' ,'ออนไลน์','15.00-16.30','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC10' , 'Automata Theory And Programming Language' , '2' ,'จุฬาภรณ์ 1 ห้อง 114','13.00-14.30','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC11' , 'Data Communication And Network' , '1' ,'จุฬาภรณ์ 2 ห้อง 211','13.00-14.30','อังคาร' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC12' , 'Data Communication And Network' , '2' ,'จุฬาภรณ์ 2 ห้อง 211','15.00-16.30','อังคาร' );
+
+#วันพุธ
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC13' , 'Information Management' , '1' ,'พระจอมเกล้า ห้อง 322','8.30-10.00','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC14' , 'Information Management' , '2' ,'พระจอมเกล้า ห้อง 323','10.30-12.00','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC15' , 'Artificial Intelligence' , '1' ,'พระจอมเกล้า ห้อง 324','10.30-12.00','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC16' , 'Artificial Intelligence' , '2' ,'พระจอมเกล้า ห้อง 324','8.30-10.00','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC17' , 'Automata Theory And Programming Language' , '1' ,'พระจอมเกล้า ห้อง 321','13.00-14.30','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC18' , 'Automata Theory And Programming Language' , '2' ,'พระจอมเกล้า ห้อง 321','13.00-14.30','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC19' , 'Data Communication And Network' , '1' ,'พระจอมเกล้า ห้อง 320','13.00-14.30','พุธ' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC20' , 'Data Communication And Network' , '2' ,'พระจอมเกล้า ห้อง 320','15.00-16.30','พุธ' );
+
+#วันพฤหัส
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC21' , 'Electronic Business' , '1' ,'พระจอมเกล้า ห้อง 318','8.30-10.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC22' , 'Digital Image Processing' , '1' ,'พระจอมเกล้า ห้อง 202/2','1300-14.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC23' , 'System Sucirity' , '1' ,'พระจอมเกล้า ห้อง 319','10.30-12.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC24' , 'Machine learning' , '1' ,'พระจอมเกล้า ห้อง 319','8.30-10.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC25' , 'Software Architectural Design' , '1' ,'พระจอมเกล้า ห้อง 203','13.00-14.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC26' , 'Software verification and validation' , '1' ,'พระจอมเกล้า ห้อง 203','15.00-16.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC27' , 'Software Requirement specification and Management' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/4','13.00-14.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC28' , 'Component Based software development' , '1' ,'พระจอมเกล้า ห้อง 320','8.30-10.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC29' , 'XML applocation Development' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/4','15.00-16.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC30' , 'Introduction to supply chain operation' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/3','13.00-14.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC31' , 'Financial Theory' , '1' ,'พระจอมเกล้า ห้อง 318','10.30-12.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC32' , 'Designing interractive system' , '1' ,'พระจอมเกล้า ห้อง 320','10.30-12.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC33' , 'Special topic development of information system integration2' , '1' ,'พระจอมเกล้า ห้อง 321','10.30-12.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC34' , 'Principle of internet of things implementation' , '1' ,'พระจอมเกล้า ห้อง 321','8.30-10.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC35' , 'Big data analysis' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/3','17.00-18.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC36' , 'Spatial database and GIS application' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/4','18.30-20.00','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC37' , 'MIXED REALITY' , '1' ,'พระจอมเกล้า ห้อง 202/2','15.00-16.30','พฤหัสบดี' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC38' , 'Programming Predictive Models Using Python' , '1' ,'จุฬาภรณ์ 2 ห้อง 209','10.30-12.00','พฤหัสบดี' );
+
+#วันศุกร์
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC39' , 'Electronic Business' , '1' ,'พระจอมเกล้า ห้อง 318','8.30-10.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC40' , 'Digital Image Processing' , '1' ,'พระจอมเกล้า ห้อง 202/2','1300-14.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC41' , 'System Sucirity' , '1' ,'พระจอมเกล้า ห้อง 319','10.30-12.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC42' , 'Machine learning' , '1' ,'พระจอมเกล้า ห้อง 319','8.30-10.00','ศุกร์');
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC43' , 'Software Architectural Design' , '1' ,'พระจอมเกล้า ห้อง 203','13.00-14.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC44' , 'Software verification and validation' , '1' ,'พระจอมเกล้า ห้อง 203','15.00-16.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC45' , 'Software Requirement specification and Management' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/4','13.00-14.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC46' , 'Component Based software development' , '1' ,'พระจอมเกล้า ห้อง 320','8.30-10.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC47' , 'XML applocation Development' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/4','15.00-16.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC48' , 'Introduction to supply chain operation' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/3','13.00-14.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC49' , 'Financial Theory' , '1' ,'พระจอมเกล้า ห้อง 318','10.30-12.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC50' , 'Designing interractive system' , '1' ,'พระจอมเกล้า ห้อง 320','10.30-12.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC51' , 'Special topic development of information system integration2' , '1' ,'พระจอมเกล้า ห้อง 321','10.30-12.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC52' , 'Principle of internet of things implementation' , '1' ,'พระจอมเกล้า ห้อง 321','8.30-10.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC53' , 'Big data analysis' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/3','17.00-18.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC54' , 'Spatial database and GIS application' , '1' ,'จุฬาภรณ์ 1 ห้อง 601/4','18.30-20.00','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC55' , 'MIXED REALITY' , '1' ,'พระจอมเกล้า ห้อง 202/2','15.00-16.30','ศุกร์' );
+INSERT INTO SubjectClass (SubjectClass_id , SubjectName , section , classroom ,time,day) 
+VALUES ('SC56' , 'Programming Predictive Models Using Python' , '1' ,'จุฬาภรณ์ 2 ห้อง 209','10.30-12.00','ศุกร์' );

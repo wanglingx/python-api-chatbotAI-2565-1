@@ -237,7 +237,12 @@ class Logic:
                 if val not in temp:
                     temp.append(val)
                     classroom[key] = val
-                    msg += classroom[str(key)]["classroom"]+"\n"+"เวลา : "+\
-                        classroom[str(key)]["time"]+"\n"
-        replyMsg = "วิชา "+subject+" เซค "+section+ " วัน"+day+" เรียนที่ "+msg
+                    msg +=  " เซค "+classroom[str(key)]["section"]+"\n"+\
+                            "เรียนที่ "+classroom[str(key)]["classroom"]+"\n"+\
+                            "เวลา " +classroom[str(key)]["time"]+"\n"
+                            
+        replyMsg = "วิชา "+subject+" วัน"+day+msg
+        
+        if len(result) <=0:
+            replyMsg = "น้องใส่ข้อมูลผิดหรือเปล่าก๊าบ"
         return replyMsg

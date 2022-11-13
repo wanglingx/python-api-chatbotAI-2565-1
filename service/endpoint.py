@@ -31,33 +31,8 @@ class Endpoint:
         lg.reply(intent, text, reply_token, id, disname, req)
         return 'OK'
 
-    #Test get data
-    @app.route('/getTime', methods=['GET'])
-    def getsub1():
-        groupjob_id = 'GJ007'
-        job = 'data science'
-        period = 'afternoon'
-        day = 'พฤหัสบดี'
-        # sent to database
-        result = db.getAllSub()
-        subject = ''
-        count = 1
-        temp = []
-        ans = dict()
-        if len(result) > 0:
-            for key, val in result.items():
-                if val not in temp:
-                    temp.append(val)
-                    ans[key] = val
-                    subject += "เวลา : " + \
-                         ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
-                        +ans[str(key)]["subject_name"]+"\n"
-
-        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ทั้งหมดมีดังนี้" + \
-            "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
-        return replyMgs
-
+    #Api Testing
     @app.route('/getClass', methods=['GET'])
     def getsub2():
-        return lg.ansClassroom(subject="Software Engineer",section="2",day="จันทร์")
+        return lg.ansClassroom(subject="Software Engineer", section="1", day="ศุกร์")
     

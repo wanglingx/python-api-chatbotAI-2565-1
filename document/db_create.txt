@@ -23,9 +23,17 @@ CREATE TABLE Subject (
 	REFERENCES Groupjob(groupjob_id)
 )
 
-
 CREATE TABLE Day (
 	id int auto_increment primary key,
 	day_name varchar(255),
 	sum_sub int
+)
+
+CREATE TABLE SubjectClass (
+ SubjectClass_id varchar(255) primary key,
+ SubjectName varchar(255),
+ section varchar(255),
+ classroom varchar(255),
+ time varchar(255),
+ day varchar(255)
 )
