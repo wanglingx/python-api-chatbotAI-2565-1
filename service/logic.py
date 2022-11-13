@@ -101,8 +101,23 @@ class Logic:
         replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" มีดังนี้"+"\n"+subject+"\nเลือกลงได้เลยนะครับผมม" 
         return replyMgs
     
+    #scene 1.1 job only by groupjob when not day or show all by job
+    def answerbyJobOnly(job, groupjob_id):
+        ans = Logic.getdata_SubjectbyGroupjob(groupjob_id)
+        subject = ''
+        if len(ans) > 0:
+            for x in range(len(ans)):
+               subject += "เวลา . " + \
+                   ans["subject"+str(x)]["time"] + \
+                   " วิชา : " + \
+                   ans["subject"+str(x)]["subject_id"]+" " + \
+                   ans["subject"+str(x)]["subject_name"]+"\n"
+        replyMgs = " วิชาเลือกที่เปิดในเทอมนี้ตามสายงานด้าน "+job + \
+            " มีดังนี้ก๊าบ "+"\n"+subject+"\nน้องๆสามารถเลือกลงทะเบียนได้เลยนะก๊าบ"
+        return replyMgs
+
     #scence 1.2 by job and period (group_job,period)
-    def answerbyJobnPeriod(job,groupjob_id,period):
+    def answerbyJobnPeriod(job, groupjob_id, period):
         resualt = Logic.getdata_SubjectbyJob(groupjob_id, period)
         subject = ''
         temp = []
@@ -112,7 +127,7 @@ class Logic:
                 if val not in temp:
                     temp.append(val)
                     ans[key] = val
-                    subject += "เวลา : " + \
+                    subject += "เวลา . " + \
                         ans[str(key)]["time"] + " วิชา : " + \
                         ans[str(key)]["subject_id"]+" " + \
                         ans[str(key)]["subject_name"]+"\n"
@@ -123,23 +138,24 @@ class Logic:
         if period == 'evening':
             period = "เย็น"
 
-        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" ช่วง"+period+" มีดังนี้" + \
-            "\n"+subject+"เลือกลงได้เลยนะครับผมม"
+        replyMgs = " วิชาเลือกที่เปิดให้ลงทะเบียนในเทอมนี้ตามสายงานด้าน "+job+" ช่วง"+period+" มีดังนี้ก๊าบ " + \
+            "\n"+subject+"น้องๆสามารถเลือกลงทะเบียนได้เลยนะก๊าบ"
         if len(ans) <= 0:
             allsub = Logic.answerbyJobOnly(job, groupjob_id)
-            replyMgs = "เทอมนี้ไม่มีช่วงที่คุณได้เลือก คุณสามารถดู"+allsub
+            replyMgs = " เทอมนี้ยังไม่มีวิชาที่เปิดสอนในช่วงเวลาที่น้องๆเลือกก๊าบ น้องๆสามารถเลือกเพิ่มเติมได้จาก "+allsub
         return replyMgs
-    
+
     #scence 1.3 by job and period (group_job,period,day)
-    def answerbyJobnPeriodnDay(job,groupjob_id,period,day):
+    def answerbyJobnPeriodnDay(job, groupjob_id, period, day):
         ans = Logic.getdata_SubjectbyTimeJob(groupjob_id, period, day)
         subject = ''
         if len(ans) > 0:
             for x in range(len(ans)):
-                subject += "เวลา : " + \
-                        ans["subject"+str(x)]["time"] + \
-                            " วิชา : " + \
-                        ans["subject"+str(x)]["subject_id"]+" "+ans["subject"+str(x)]["subject_name"]+"\n"
+                subject += "เวลา . " + \
+                    ans["subject"+str(x)]["time"] + \
+                    " วิชา : " + \
+                    ans["subject"+str(x)]["subject_id"]+" " + \
+                    ans["subject"+str(x)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
         if period == 'afternoon':
@@ -147,16 +163,16 @@ class Logic:
         if period == 'evening':
             period = "เย็น"
 
-        replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ตามอาชีพ "+job+" ช่วง"+period+" ของวัน"+day+" มีดังนี้" + \
-            "\n"+subject+"เลือกลงได้เลยนะครับผมม"
+        replyMgs = " วิชาเลือกที่เปิดในเทอมนี้ตามสายงานด้าน "+job+" ช่วง "+period+" ของวัน "+day+" มีดังนี้ " + \
+            "\n"+subject+"น้องๆสามารถเลือกลงได้เลยนะก๊าบ"
 
         if len(ans) <= 0:
             allsub = Logic.answerbyJobOnly(job, groupjob_id)
-            replyMgs = "เทอมนี้ไม่มีช่วงที่คุณได้เลือก คุณสามารถดู"+allsub
+            replyMgs = " เทอมนี้ยังไม่มีวิชาที่เปิดสอนในช่วงเวลาที่น้องๆเลือกก๊าบ น้องๆสามารถเลือกเพิ่มเติมได้จาก "+allsub
         return replyMgs
-    
+
     #scene 2.1 only time
-    def answerbyTimeOnly(period,day):
+    def answerbyTimeOnly(period, day):
         result = Logic.getdata_SubjectbyTime(period, day)
         subject = ''
         temp = []
@@ -166,9 +182,9 @@ class Logic:
                 if val not in temp:
                     temp.append(val)
                     ans[key] = val
-                    subject += "เวลา : " + \
+                    subject += "เวลา . " + \
                         ans[str(key)]["time"] + " วิชา : " + \
-                        ans[str(key)]["subject_id"]+" "+ \
+                        ans[str(key)]["subject_id"]+" " + \
                         ans[str(key)]["subject_name"]+"\n"
         if period == 'morning':
             period = "เช้า"
@@ -177,13 +193,13 @@ class Logic:
         if period == 'evening':
             period = "เย็น"
 
-        replyMgs = "สำหรับวิชาเลือกที่เปิดในเทอมนี้ช่วง"+period+"ของวัน" + \
-            day+"มีดังนี้"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
-            
+        replyMgs = "สำหรับวิชาเลือกที่เปิดให้ลงทะเบียนในเทอมนี้ช่วง"+period+"ของวัน" + \
+            day+"มีดังนี้"+"\n"+subject+"น้องๆสามารถเลือกลงทะเบียนได้เลยนะก๊าบ"
+
         if len(result) <= 0:
             replyMgs = Logic.answerAllSub()
         return replyMgs
-    
+
     #scene 2.2 all of semester not job not period not day
     def answerAllSub():
         result = Logic.getdata_SubAll()
@@ -191,16 +207,17 @@ class Logic:
         temp = []
         ans = dict()
         if len(result) > 0:
-                for key, val in result.items():
-                    if val not in temp:
-                        temp.append(val)
-                        ans[key] = val
-                        subject += "เวลา : " + \
-                            ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
-                            +ans[str(key)]["subject_name"]+"\n"
+            for key, val in result.items():
+                if val not in temp:
+                    temp.append(val)
+                    ans[key] = val
+                    subject += "เวลา . " + \
+                        ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
+                        + ans[str(key)]["subject_name"]+"\n"
 
-        replyMgs = "ไม่มีวิชาเลือกในวันที่คุณเลือกในเทอมนี้"+"\n"+"โดยในเทอมนี้มีเปิดสอนทั้งหมดมีดังนี้" + \
-                "\n"+"ซึ่งวันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
+        replyMgs = "ไม่มีวิชาเลือกในวันที่น้องๆเลือกในเทอมนี้ก๊าบ "+"\n"+"โดยวิชาเลือกที่เปิดสอนทั้งหมดในเทอมนี้ มีดังนี้ก๊าบ " + \
+            "\n"+"ซึ่งวันพฤหัสบดีและวันศุกร์นั้นจะมีวันเวลาเรียนในช่วงเดียวกันก๊าบ" + \
+            "\n"+subject+"น้องๆสามารถเลือกลงทะเบียนได้เลยนะก๊าบ"
         return replyMgs
 
     #classroom
