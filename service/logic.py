@@ -202,3 +202,25 @@ class Logic:
         replyMgs = "ไม่มีวิชาเลือกในวันที่คุณเลือกในเทอมนี้"+"\n"+"โดยในเทอมนี้มีเปิดสอนทั้งหมดมีดังนี้" + \
                 "\n"+"ซึ่งวันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
+
+    #classroom
+    #เข้า Data base subject section day
+    def getData_classroom(subject,section,day):
+        classroom = db.getClassroom(subject, section, day)
+        return classroom
+    
+    #scene ask classroom
+    def ansClassroom(subject,section,day):
+        result = Logic.getData_classroom(subject,section,day)
+        msg = ''
+        temp = []
+        classroom = dict()
+        if len(result) > 0:
+            for key, val in result.items():
+                if val not in temp:
+                    temp.append(val)
+                    classroom[key] = val
+                    msg += classroom[str(key)]["classroom"]+"\n"+"เวลา : "+\
+                        classroom[str(key)]["time"]+"\n"
+        replyMsg = "วิชา "+subject+" เซค "+section+ " วัน"+day+" เรียนที่ "+msg
+        return replyMsg

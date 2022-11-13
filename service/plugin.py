@@ -94,4 +94,19 @@ def getAllSub():
             arr["subject" + str(x)] = {"subject_id": result[x][0], 
                                        "subject_name": result[x][1],
                                        "time": result[x][2]}
-    return arr        
+    return arr     
+
+#get classroom by subject section day
+def getClassroom(subject,section,day):
+    mydb = db.ConnectorMysql()
+    mycursor = mydb.cursor()
+    sql = "SELECT classroom,time FROM SubjectClass WHERE SubjectName = %s AND section = %s AND day = %s "
+    value = (subject,section,day)
+    mycursor.execute(sql,value)
+    result = mycursor.fetchall()   
+    classroom = {}
+    if len(result) > 0:
+        for x in range(len(result)):
+            classroom["classroom" + str(x)] = { "classroom": result[x][0],
+                                                "time": result[x][1]}
+    return classroom

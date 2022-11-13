@@ -57,7 +57,7 @@ class Endpoint:
             "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
 
-    @app.route('/getTime2', methods=['GET'])
+    @app.route('/getClass', methods=['GET'])
     def getsub2():
-        return lg.answerbyTimeOnly(period='afternoon', day='จันทร์')
+        return lg.ansClassroom(subject="Software Engineer",section="2",day="จันทร์")
     
