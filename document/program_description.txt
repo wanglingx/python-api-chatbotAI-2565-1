@@ -1,4 +1,4 @@
-# Tool installation
+# python library installation
 pip install Flask
 pip install mysql-connector-python
 
@@ -12,11 +12,18 @@ service --
 
     app.py (main system in this project)
 
-# Database connector
-using cloud database = amazon web service (คร่าว ๆ ขอดูก่อน)
-
-# Webserver connector
-using cloud webserver = Heroku
-
 # flow of data
 chatbot -> dialogflow -> json file -> Backend(python) -> database server
+
+วิธีการติดตั้งและการใช้งานของ Backend
+1. เมื่อทำการ download ไฟล์โปรเจคมาแล้ว ให้ทำการติดตั้ง Flask และ MySQL ในโปรเจคโดยใช้คำสั่ง
+   	- pip install line-bot-sdk https://pypi.org/project/line-bot-sdk/ 
+    -  pip install Flask
+   	- pip install MySQL-connector-python
+2. เชื่อมต่อกับ Database MySQL โดยใส่ข้อมูลฐานข้อมูลที่จะเชื่อมต่อภายในไฟล์ /database/config.py
+เมื่อทำการเชื่อมต่อดาต้าเบสแล้วนำ script ใน document ไปทำการ create table และ insert ข้อมูล
+3. ทำการเชื่อมต่อกับ ngrok ให้ทำการ download https://ngrok.com/download ตามลิงค์โดยดาวน์โหลดเป็น zip
+แล้วทำการแตกไฟล์ออกมาให้กด run ที่ file ngrok.exe จากนั้นให้ใช้คำสั่ง ngrok http 5000 เพื่อเปิด server
+4. ให้เข้าไปใน dialog flow https://dialogflow.cloud.google.com/#/agent/duckbot-vuxl/intents
+ แล้วเลือกที่ fulfillment แล้วนำลิงค์ข้างล่างไปกรอกใน webhook แล้ว /callback
+5. รันโค้ดโดยใช้คำสั่ง python app.py

@@ -24,9 +24,19 @@ class Logic:
             time = Logic.setTime(req)
             day = Logic.setDay(req)
             text = Logic.answerbyTimeOnly(time,day)
- 
+
+        
+        elif intent == 'classroom':
+            day=Logic.setDay(req)
+            subject=Logic.setSubject(req)
+            section=Logic.setSection(req)
+            text = Logic.ansClassroom(subject,section,day)
+            # print("day = ",day," sub = ",subject," section = ",section)
+
+
         text_message = app.TextSendMessage(text)
         app.line_bot_api.reply_message(reply_token, text_message) # ส่งข้อความตอบกลับไป
+
 
     def test1():
         return 'ทดสอบสำเร็จ'     
@@ -48,14 +58,21 @@ class Logic:
     
     def setDay(req) : 
         day = req["queryResult"]["outputContexts"][0]["parameters"]["day"]
-        # if day == 'พฤหัส' or day == 'พฤหัสบดี' or day == 'วันพฤหัส' or day == 'วันพฤหัสบดี' or day == 'thursday' or day == 'Thursday':
-        #     day = 'พฤหัสบดี'
-        # elif day == 'ศุกร์' or day == 'ศุก' or day == 'วันศุกร์' or day == 'วันศุก' or day == 'friday' or day == 'Friday':
-        #     day = 'ศุกร์'  
-        # else :
-        #     return 'เสียใจด้วยน้า เทอมนี้ยังไม่มี แต่ยังมีวิชาอื่นนะ ว่าแต่เทอมนี้มีวิชาไรบ้างน้า'  
         return day
     
+    def setSubject(req) : 
+        subject = req["queryResult"]["outputContexts"][0]["parameters"]["classroom"]
+        return subject
+
+    def setSection(req):
+        section = req["queryResult"]["outputContexts"][0]["parameters"]["section"]
+        if section =="Sec 1": 
+            section='1'
+        elif section == 'Sec 2':
+            section='2'
+        elif section == 'วิชาเลือก':
+            section='1'
+        return section
     
     #เข้า database by job 
     def getgroups_ID(job_name):
