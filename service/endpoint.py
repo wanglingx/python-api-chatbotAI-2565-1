@@ -4,6 +4,7 @@ import app as api
 from service.logic import Logic as lg
 import service.plugin as db
 
+
 class Endpoint:
     @app.route("/callback", methods=['POST'])
     def callback():
@@ -18,8 +19,8 @@ class Endpoint:
         reply_token = req['originalDetectIntentRequest']['payload']['data']['replyToken']
         # id ของผู้ใช้
         id = req['originalDetectIntentRequest']['payload']['data']['source']['userId']
-        disname = api.line_bot_api.get_profile(id).display_name  
-        
+        disname = api.line_bot_api.get_profile(id).display_name
+
         # ชื่อของผู้ใช้
         # print(req)
         print('id = ' + id)
@@ -31,7 +32,7 @@ class Endpoint:
         lg.reply(intent, text, reply_token, id, disname, req)
         return 'OK'
 
-    #Test get data
+    # Test get data
     @app.route('/getTime', methods=['GET'])
     def getsub1():
         groupjob_id = 'GJ007'
@@ -50,14 +51,15 @@ class Endpoint:
                     temp.append(val)
                     ans[key] = val
                     subject += "เวลา : " + \
-                         ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
-                        +ans[str(key)]["subject_name"]+"\n"
+                        ans[str(key)]["time"] + " วิชา : " + ans[str(key)]["subject_id"]+" "\
+                        + ans[str(key)]["subject_name"]+"\n"
 
         replyMgs = "วิชาเลือกที่เปิดในเทอมนี้ทั้งหมดมีดังนี้" + \
-            "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน"+"\n"+subject+"เลือกลงได้เลยนะครับผมม"
+            "\n"+"วันพฤหัสบดีและวันศุกร์มีวันเวลาช่วงเดียวกัน" + \
+            "\n"+subject+"เลือกลงได้เลยนะครับผมม"
         return replyMgs
 
     @app.route('/getClass', methods=['GET'])
     def getsub2():
-        return lg.ansClassroom(subject="Software Engineer", section="1", day="ศุกร์")
-    
+        #return lg.answerbyJobnPeriodnDay(job="Tester", groupjob_id="GJ005", period="เช้า", day="พุธ")
+        return lg.answerAllSub()

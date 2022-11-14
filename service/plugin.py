@@ -21,7 +21,7 @@ def getSubbyJOb(groupjob_name):
 def getSubbyJobnPeriod(groupjob_id,period):
     mydb = db.ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_id,subject_name ,time FROM Subject WHERE groupjob_id = %s AND period = %s "
+    sql = "SELECT Distinct subject_id,subject_name ,time FROM Subject WHERE groupjob_id = %s AND period = %s "
     val = (groupjob_id, period)
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
@@ -37,7 +37,7 @@ def getSubbyJobnPeriod(groupjob_id,period):
 def getSubbyTime(groupjob_id,time,day):
     mydb = db.ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_id,subject_name ,time FROM Subject WHERE groupjob_id = %s AND period = %s AND day = %s"
+    sql = "SELECT Distinct subject_id,subject_name ,time FROM Subject WHERE groupjob_id = %s AND period = %s AND day = %s"
     val = (groupjob_id,time,day)
     mycursor.execute(sql,val)
     result = mycursor.fetchall()
@@ -53,7 +53,7 @@ def getSubbyTime(groupjob_id,time,day):
 def getSubbyGroupjob(groupjob_id):
     mydb = db.ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_id,subject_name ,time,day FROM Subject WHERE groupjob_id = '{}';".format(groupjob_id)
+    sql = "SELECT Distinct subject_id,subject_name,time FROM Subject WHERE groupjob_id = '{}';".format(groupjob_id)
     mycursor.execute(sql)
     result = mycursor.fetchall()
     arr = {}
@@ -61,15 +61,14 @@ def getSubbyGroupjob(groupjob_id):
         for x in range(len(result)):
                 arr["subject" + str(x)]= {"subject_id": result[x][0],
                                            "subject_name": result[x][1],
-                                           "time": result[x][2],
-                                           "day":result[x][3]}
+                                           "time": result[x][2]}
     return arr
 
 #use for get subjectby time only *
 def getSubbyTimeNG(time, day):
     mydb = db.ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_id,subject_name ,time FROM Subject WHERE period = %s AND day = %s"
+    sql = "SELECT Distinct subject_id,subject_name ,time FROM Subject WHERE period = %s AND day = %s"
     val = (time, day)
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
@@ -85,7 +84,7 @@ def getSubbyTimeNG(time, day):
 def getAllSub():
     mydb = db.ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT subject_id,subject_name,time,day FROM Subject "
+    sql = "SELECT Distinct subject_id,subject_name,time FROM Subject"
     mycursor.execute(sql)
     result = mycursor.fetchall()
     arr = {}
@@ -100,7 +99,7 @@ def getAllSub():
 def getClassroom(subject,section,day):
     mydb = db.ConnectorMysql()
     mycursor = mydb.cursor()
-    sql = "SELECT classroom,section,time FROM SubjectClass WHERE SubjectName = %s AND section = %s AND day = %s "
+    sql = "SELECT Distinct classroom,section,time FROM SubjectClass WHERE SubjectName = %s AND section = %s AND day = %s "
     value = (subject,section,day)
     mycursor.execute(sql,value)
     result = mycursor.fetchall()   
@@ -110,7 +109,7 @@ def getClassroom(subject,section,day):
             classroom["classroom" + str(x)] = {"classroom": result[x][0], "section": result[x][1],
                                                 "time": result[x][2]}
     elif len(result) <= 0:
-        sql = "SELECT classroom,section,time FROM SubjectClass WHERE SubjectName = %s AND section = 1 AND day = %s "
+        sql = "SELECT Distinct classroom,section,time FROM SubjectClass WHERE SubjectName = %s AND section = 1 AND day = %s "
         value = (subject, day)
         mycursor.execute(sql, value)
         result = mycursor.fetchall()
