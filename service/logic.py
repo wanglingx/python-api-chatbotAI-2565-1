@@ -190,7 +190,6 @@ class Logic:
         ans = dict()
         if len(resualt) > 0:
             for key, val in resualt.items():
-                print(key+" "+" "+key)
                 if val not in temp:
                     temp.append(val)
                     ans[key] = val
