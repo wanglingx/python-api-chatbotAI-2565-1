@@ -64,6 +64,8 @@ def getSubbyGroupjob(groupjob_id):
                                            "time": result[x][2]}
     return arr
 
+#Hello world
+
 #use for get subjectby time only *
 def getSubbyTimeNG(time, day):
     mydb = db.ConnectorMysql()
